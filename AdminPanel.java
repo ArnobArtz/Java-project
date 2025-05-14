@@ -11,7 +11,7 @@ public class AdminPanel extends JFrame {
     private JTextArea outputArea;
 
     public AdminPanel() {
-        setTitle("Admin Panel - Event Management System");
+        setTitle("Admin Panel");
         setSize(1500, 1020);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,8 +34,8 @@ public class AdminPanel extends JFrame {
         JButton memberDetailsBtn = new JButton("Member Ticket Details");
         JButton manageEventsBtn = new JButton("Manage Events");
         JButton updatePricesBtn = new JButton("Update Ticket Prices");
-        JButton inquiriesBtn = new JButton("Handle Inquiries");
-        JButton eventReportBtn = new JButton("Event Reports");
+        JButton inquiriesBtn = new JButton("Customer Inquiries");
+        JButton eventReportBtn = new JButton("Event Report");
         JButton salesMonitorBtn = new JButton("Monitor Sales");
         JButton deleteEventBtn = new JButton("Delete Event");
         JButton exitBtn = new JButton("Exit");
@@ -83,7 +83,7 @@ public class AdminPanel extends JFrame {
                     }
                 }
             } catch (IOException e) {
-  System.out.println("Error reading events: " + e.getMessage());
+  System.out.println("Wrong Input: " + e.getMessage());
             }
         }
         int bookedTickets = 0;
@@ -100,7 +100,7 @@ public class AdminPanel extends JFrame {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Error reading ticket bookings: " + e.getMessage());
+            System.out.println("Please check the input: " + e.getMessage());
         }
         return totalTickets - bookedTickets;
     }
